@@ -9,7 +9,7 @@ body {
 
 	display: grid;
 	grid-template-columns: auto;
-	grid-template-rows: minmax(100px, auto) 1fr minmax(100px, auto);
+	grid-template-rows: minmax(7rem, auto) 1fr minmax(7rem, auto);
 	grid-template-areas:
 		"header"
 		"main"
@@ -41,21 +41,21 @@ main {
 main>section {
 	grid-area: articles;
 
-	padding: 10px;
+	padding: 1rem;
 }
 main>section>div {
 	display: flex;
 	flex-direction: column;
-	gap: 10px;
+	gap: 1rem;
 }
 
 article {
 	background-color: yellow;
-	padding: 10px;
+	padding: 1rem;
 }
 
 h1 {
-	font-size: 30px;
+	font-size: 2rem;
 	text-align: center;
 }
 
@@ -64,7 +64,7 @@ nav {
 
 	background-color: #444;
 	color: #fff;
-	padding: 10px;
+	padding: 1rem;
 }
 
 nav a {
@@ -76,7 +76,7 @@ aside {
 
 	background-color: #444;
 	color: #fff;
-	padding: 10px;
+	padding: 1rem;
 }
 
 footer {
@@ -84,24 +84,24 @@ footer {
 
 	display: flex;
 	flex-direction: column;
-	gap: 10px;
-	padding: 10px;
+	gap: 1rem;
+	padding: 1rem;
 }
 
 .logo {
-	font-size: 50px;
+	font-size: 3rem;
 	font-weight: bold;
 }
 
 p {
-	margin-top: 10px;
+	margin-top: 1em;
 }
 
 ul {
 	list-style: none;
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 50rem) {
 	main>section>div {
 		flex-direction: row;
 		flex-wrap: wrap;
@@ -109,7 +109,7 @@ ul {
 	}
 	article {
 		flex-grow: 1;
-		flex-basis: 300px;
+		flex-basis: 20rem;
 	}
 
 	footer {
@@ -119,9 +119,9 @@ ul {
 	}
 }
 
-@media screen and (min-width: 1400px) {
+@media screen and (min-width: 90rem) {
 	main {
-		grid-template-columns: 200px 1fr 200px;
+		grid-template-columns: 13rem 1fr 13rem;
 		grid-template-rows: auto;
 		grid-template-areas: "nav articles sidebar";
 	}
