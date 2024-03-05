@@ -1,3 +1,17 @@
+:root {
+	--default-spacing: 1rem;
+
+	--primary-background-color: #fff;
+	--primary-foreground-color: #000;
+
+	--secondary-backgrond-color: #444;
+	--secondary-foreground-color: #fff;
+
+	--article-background-color: #ffff00;
+	--article-foreground-color: #000;
+}
+
+
 * {
 	margin: 0;
 	padding: 0;
@@ -14,6 +28,9 @@ body {
 		"header"
 		"main"
 		"footer";
+
+	background-color: var(--primary-background-color);
+	color: var(--primary-foreground-color);
 
 	font-family: sans-serif;
 }
@@ -41,17 +58,18 @@ main {
 main>section {
 	grid-area: articles;
 
-	padding: 1rem;
+	padding: var(--default-spacing);
 }
 main>section>div {
 	display: flex;
 	flex-direction: column;
-	gap: 1rem;
+	gap: var(--default-spacing);
 }
 
 article {
-	background-color: yellow;
-	padding: 1rem;
+	background-color: var(--article-background-color);
+	color: var(--article-foreground-color);
+	padding: var(--default-spacing);
 }
 
 h1 {
@@ -62,21 +80,21 @@ h1 {
 nav {
 	grid-area: nav;
 
-	background-color: #444;
-	color: #fff;
-	padding: 1rem;
+	background-color: var(--secondary-backgrond-color);
+	color: var(--secondary-foreground-color);
+	padding: var(--default-spacing);
 }
 
 nav a {
-	color: #fff;
+	color: var(--secondary-foreground-color);
 }
 
 aside {
 	grid-area: sidebar;
 
-	background-color: #444;
-	color: #fff;
-	padding: 1rem;
+	background-color: var(--secondary-backgrond-color);
+	color: var(--secondary-foreground-color);
+	padding: var(--default-spacing);
 }
 
 footer {
@@ -84,8 +102,8 @@ footer {
 
 	display: flex;
 	flex-direction: column;
-	gap: 1rem;
-	padding: 1rem;
+	gap: var(--default-spacing);
+	padding: calc(2 * var(--default-spacing));
 }
 
 .logo {
@@ -124,5 +142,18 @@ ul {
 		grid-template-columns: 13rem 1fr 13rem;
 		grid-template-rows: auto;
 		grid-template-areas: "nav articles sidebar";
+	}
+}
+
+@media (prefers-color-scheme: dark) {
+	:root {
+		--primary-background-color: #444;
+		--primary-foreground-color: #fff;
+	
+		--secondary-backgrond-color: #ccc;
+		--secondary-foreground-color: #000;
+	
+		--article-background-color: #ffff00;
+		--article-foreground-color: #000;
 	}
 }
